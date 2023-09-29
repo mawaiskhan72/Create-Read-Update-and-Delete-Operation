@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Data Management</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+</head>
+
+<body>
+	<h1 style="color: black8; display: flex; justify-content: center;" >
+		CRUD Operation 
+	</h1>
+
+  <table id="outputTable">
+		<tr>
+			<th>Name</th>
+			<th>Country</th>
+			<th>Age</th>
+			<th>Mobile Number</th>
+			<th>Action</th>
+		</tr>
+	</table>
+
+
+  <div class="box">
+	<div id="formContainer">
+
+		<label  for="nameInput">
+			Name:
+		</label>
+		<input type="text"
+			id="nameInput"
+			placeholder="Enter your name">
+
+		<label for="countryInput">
+			Country:
+		</label>
+		<input type="country"
+			id="countryInput"
+			placeholder="Enter your Country">
+
+		<label for="ageInput">
+			Age:
+		</label>
+		<input type="text"
+			id="ageInput"
+			placeholder="Enter your Age">
+
+      <label for="mobile">Mobile Number:</label>
+<input
+    id="MobileInput"
+    placeholder="Enter your Mobile number"
+    oninput="validateMobile(this)"
+    maxlength="11"
+    type="tel"
+    pattern="[0-9]*"
+    required
+>
+<span id="mobileError" style="color: red;"></span>
+
+
+  <button onclick="addData()">
+    Add
+  </button>
+</div>
+
+</body>
+</html>
