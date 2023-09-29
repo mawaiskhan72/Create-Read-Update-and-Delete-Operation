@@ -21,19 +21,22 @@ function addData() {
     '<button onclick="editData(this)">Edit</button>'+
     '<button onclick="deleteData(this)">Delete</button>';
   
-
+  // Clear input fields
   clearInputs();
 }
 
 function editData(button) {
-
+  
+  // Get the parent row of the clicked button
   let row = button.parentNode.parentNode;
-
+  
+  // Get the cells within the row
   let nameCell = row.cells[0];
   let countryCell = row.cells[1];
   let ageCell = row.cells[2];
   let MobileCell = row.cells[3];
   
+  // Prompt the user to enter updated values
   let nameInput =
     prompt("Enter the updated Name:",
       nameCell.innerHTML);
@@ -49,19 +52,23 @@ function editData(button) {
       MobileCell.innerHTML
     );
   
-
+  // Update the cell contents with the new values
   nameCell.innerHTML = nameInput;
   countryCell.innerHTML = countryInput;
-  mobileCell.innerHTML = ageInput;
+  MobileCell.innerHTML = ageInput;
   MobileCell.innerHTML = MobileInput;
 }
 function deleteData(button) {
   
+  // Get the parent row of the clicked button
   let row = button.parentNode.parentNode;
+
+  // Remove the row from the table
   row.parentNode.removeChild(row);
 }
 function clearInputs() {
   
+  // Clear input fields
   document.getElementById("nameInput").value = "";
   document.getElementById("countryInput").value = "";
   document.getElementById("ageInput").value = "";
@@ -75,4 +82,27 @@ function validateMobile(input) {
   if (mobileNumber.length === 11) {
       errorSpan.textContent = '';
   }
+}
+
+function editData(button) {
+  // Get the parent row of the clicked button
+  let row = button.parentNode.parentNode;
+
+  // Get the cells within the row
+  let nameCell = row.cells[0];
+  let countryCell = row.cells[1];
+  let ageCell = row.cells[2];
+  let MobileCell = row.cells[3];
+
+  // Prompt the user to enter updated values
+  let nameInput = prompt("Enter the updated Name:", nameCell.innerHTML);
+  let countryInput = prompt("Enter the updated country:", countryCell.innerHTML);
+  let ageInput = prompt("Enter the updated Age:", ageCell.innerHTML);
+  let MobileInput = prompt("Enter the updated Mobile:", MobileCell.innerHTML);
+
+  // Update the cell contents with the new values
+  nameCell.innerHTML = nameInput;
+  countryCell.innerHTML = countryInput;
+  ageCell.innerHTML = ageInput; // Update age as well
+  MobileCell.innerHTML = MobileInput;
 }
